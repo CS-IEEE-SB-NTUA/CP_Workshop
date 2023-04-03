@@ -146,13 +146,13 @@ int main() {
     }
     vector<ll> w = v;
     vector<ll> ans;
-    sort(v.begin(), v.end());
-    for (auto &x : w) {
-      auto it = upper_bound(v.begin(), v.end(), 2 * x);
+    sort(w.begin(), w.end());
+    for (auto &x : v) {
+      auto it = upper_bound(w.begin(), w.end(), 2 * x);
       it--;
       if (*it != x) {
         ans.push_back(*it);
-      } else if (it == v.begin()) {
+      } else if (it == w.begin()) {
         ans.push_back(-1);
       } else {
         it--;
